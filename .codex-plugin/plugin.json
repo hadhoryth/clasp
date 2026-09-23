@@ -1,0 +1,23 @@
+{
+  "name": "clasp",
+  "version": "0.1.0",
+  "description": "Local Claude Code launcher and Anthropic Messages gateway backed by a Codex ChatGPT account.",
+  "author": {
+    "name": "Clasp contributors"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Clasp",
+    "shortDescription": "Run Claude Code through your Codex account.",
+    "longDescription": "Launch and diagnose an authenticated localhost gateway with dynamic model discovery, role routing, streaming, and tool translation. Experimental compatibility limits are documented.",
+    "developerName": "Clasp contributors",
+    "category": "Productivity",
+    "capabilities": [],
+    "defaultPrompt": "Help me configure or diagnose the Clasp launcher.",
+    "brandColor": "#65D7B3",
+    "composerIcon": "./assets/logo.png",
+    "logo": "./assets/logo.png",
+    "logoDark": "./assets/logo.png"
+  },
+  "license": "MIT"
+}
