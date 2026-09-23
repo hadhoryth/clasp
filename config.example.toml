@@ -1,0 +1,35 @@
+# With no model IDs configured, all roles use the first visible Codex catalog model.
+# Discover exact IDs using: clasp models
+# default_model = "YOUR_MAIN_MODEL"
+
+[reasoning]
+# main = "high"
+# subagent = "high"
+# classifier = "low"
+# compact = "low"
+# background = "low"
+
+[routing]
+# opus = "YOUR_MAIN_MODEL"
+# sonnet = "YOUR_MAIN_MODEL"
+# haiku = "YOUR_FAST_MODEL"
+# subagent = "YOUR_MAIN_MODEL"
+# classifier = "YOUR_FAST_MODEL"
+# compact = "YOUR_FAST_MODEL"
+# background = "YOUR_FAST_MODEL"
+
+[gateway]
+host = "127.0.0.1"
+timeout_ms = 600000
+max_body_bytes = 33554432
+
+[models]
+refresh_interval = "1h"
+
+[claude]
+# Client behavior profile, not the upstream model. Checked with Claude 2.1.272.
+behaves_as = "claude-sonnet-4-6"
+classify_all_shell = false
+
+[fallback]
+# "YOUR_MAIN_MODEL" = ["YOUR_EXPLICIT_BACKUP"]

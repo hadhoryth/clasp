@@ -1,0 +1,62 @@
+{
+  "name": "clasp",
+  "version": "0.1.0",
+  "description": "Claude Code Messages gateway for a Codex ChatGPT account",
+  "type": "module",
+  "license": "MIT",
+  "bin": {
+    "clasp": "bin/clasp.js"
+  },
+  "files": [
+    "bin",
+    "dist",
+    "scripts/permission-hook.mjs",
+    "skills",
+    ".codex-plugin",
+    "README.md",
+    "docs",
+    "config.example.toml",
+    "LICENSE",
+    "scripts/live-smoke.mjs",
+    "assets",
+    "CHANGELOG.md",
+    "CONTRIBUTING.md"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "npm run build && node --test test/*.test.mjs",
+    "start": "node bin/clasp.js",
+    "prepack": "npm run build",
+    "format": "prettier --write src test bin scripts .codex-plugin package.json tsconfig.json .github",
+    "format:check": "prettier --check src test bin scripts .codex-plugin package.json tsconfig.json .github",
+    "test:live": "npm run build && node scripts/live-smoke.mjs",
+    "release:check": "node scripts/release-check.mjs",
+    "release:build": "node scripts/release-build.mjs",
+    "release:verify": "node scripts/release-verify.mjs"
+  },
+  "dependencies": {
+    "js-tiktoken": "^1.0.21",
+    "smol-toml": "^1.4.2",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "@types/node": "^22.18.0",
+    "prettier": "^3.6.2",
+    "typescript": "^5.9.2"
+  },
+  "keywords": [
+    "claude-code",
+    "codex",
+    "gateway",
+    "cli",
+    "codex-plugin"
+  ],
+  "bundleDependencies": [
+    "js-tiktoken",
+    "smol-toml",
+    "zod"
+  ]
+}
